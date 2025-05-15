@@ -1,0 +1,3 @@
+project-env/
+*.pyc
+module/__pycache__/

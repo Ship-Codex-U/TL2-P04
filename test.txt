@@ -1,0 +1,254 @@
+int x = 0;
+int suma;
+float operacion;
+string texto = "10";
+float resta;
+
+operacion = 10 - 5 + (6 * 10 + (1 / 2));
+
+while(x == 0){
+    suma = 10 + 20;
+
+    if( texto == "10" ){
+        texto = "20";
+
+        for(int z = 10; z <= 20; z++){
+            resta = 10 - 2;
+        }
+    }else{
+        texto = "30";
+    }
+
+}
+
+Arbol de sintaxis:
+[
+    {
+        'type': 'assignment',
+        'data_type': ('int', 'Palabra reservada int', 1),
+        'identifier': ('x', 'Identificador', 1),
+        'expression': {
+            'type': 'factor',
+            'value': ('0', 'Entero', 1)
+        }
+    }, {
+        'type': 'declaration',
+        'data_type': ('int', 'Palabra reservada int', 2),
+        'identifier': ('suma', 'Identificador', 2)
+    }, {
+        'type': 'declaration',
+        'data_type': ('float', 'Palabra reservada float', 3),
+        'identifier': ('operacion', 'Identificador', 3)
+    }, {
+        'type': 'assignment',
+        'data_type': ('string', 'Palabra reservada string', 4),
+        'identifier': ('texto', 'Identificador', 4),
+        'expression': {
+            'type': 'factor',
+            'value': ('"10"', 'Cadena', 4)
+        }
+    }, {
+        'type': 'assignment',
+        'identifier': ('operacion', 'Identificador', 6),
+        'expression': {
+            'type': 'binary_operation',
+            'operator': ('+', 'Operador suma', 6),
+            'left': {
+                'type': 'binary_operation',
+                'operator': ('-', 'Operador resta', 6),
+                'left': {
+                    'type': 'factor',
+                    'value': ('10', 'Entero', 6)
+                },
+                'right': {
+                    'type': 'factor',
+                    'value': ('5', 'Entero', 6)
+                }
+            },
+            'right': {
+                'type': 'group',
+                'expression': {
+                    'type': 'binary_operation',
+                    'operator': ('+', 'Operador suma', 6),
+                    'left': {
+                        'type': 'binary_operation',
+                        'operator': ('*', 'Operador multiplicación', 6),
+                        'left': {
+                            'type': 'factor',
+                            'value': ('6', 'Entero', 6)
+                        },
+                        'right': {
+                            'type': 'factor',
+                            'value': ('10', 'Entero', 6)
+                        }
+                    },
+                    'right': {
+                        'type': 'group',
+                        'expression': {
+                            'type': 'binary_operation',
+                            'operator': ('/', 'Operador división', 6),
+                            'left': {
+                                'type': 'factor',
+                                'value': ('1', 'Entero', 6)
+                            },
+                            'right': {
+                                'type': 'factor',
+                                'value': ('2', 'Entero', 6)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }, {
+        'type': 'while',
+        'condition': {
+            'type': 'comparison_operation',
+            'operator': ('==', 'Operación igualdad', 8),
+            'left': {
+                'type': 'factor',
+                'value': ('x', 'Identificador', 8)
+            },
+            'right': {
+                'type': 'factor',
+                'value': ('0', 'Entero', 8)
+            }
+        },
+        'body': [
+            {
+                'type': 'assignment',
+                'identifier': ('suma', 'Identificador', 9),
+                'expression': {
+                    'type': 'binary_operation',
+                    'operator': ('+', 'Operador suma', 9),
+                    'left': {
+                        'type': 'factor',
+                        'value': ('10', 'Entero', 9)
+                    },
+                    'right': {
+                        'type': 'factor',
+                        'value': ('20', 'Entero', 9)
+                    }
+                }
+            }, {
+                'type': 'if',
+                'condition': {
+                    'type': 'comparison_operation',
+                    'operator': ('==', 'Operación igualdad', 11),
+                    'left': {
+                        'type': 'factor',
+                        'value': ('texto', 'Identificador', 11)
+                    },
+                    'right': {
+                        'type': 'factor',
+                        'value': ('"10"', 'Cadena', 11)
+                    }
+                },
+                'body': [
+                    {
+                        'type': 'assignment',
+                        'identifier': ('texto', 'Identificador', 12),
+                        'expression': {
+                            'type': 'factor',
+                            'value': ('"20"', 'Cadena', 12)
+                        }
+                    }, {
+                        'type': 'for',
+                        'initialization': {
+                            'type': 'assignment',
+                            'data_type': ('int', 'Palabra reservada int', 14),
+                            'identifier': ('z', 'Identificador', 14),
+                            'expression': {
+                                'type': 'factor',
+                                'value': ('10', 'Entero', 14)
+                            }
+                        },
+                        'condition': {
+                            'type': 'comparison_operation',
+                            'operator': ('<=', 'Operador relacional', 14),
+                            'left': {
+                                'type': 'factor',
+                                'value': ('z', 'Identificador', 14)
+                            },
+                            'right': {
+                                'type': 'factor',
+                                'value': ('20', 'Entero', 14)
+                            }
+                        },
+                        'increment': {
+                            'type': 'increment_decrement',
+                            'identifier': ('z', 'Identificador', 14),
+                            'operator': ('++', 'Operador incremento', 14)
+                        },
+                        'body': [
+                            {
+                                'type': 'assignment',
+                                'identifier': ('resta', 'Identificador', 15),
+                                'expression': {
+                                    'type': 'binary_operation',
+                                    'operator': ('-', 'Operador resta', 15),
+                                    'left': {
+                                        'type': 'factor',
+                                        'value': ('10', 'Entero', 15)
+                                    },
+                                    'right': {
+                                        'type': 'factor',
+                                        'value': ('2', 'Entero', 15)
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                'else_body': [
+                    {
+                        'type': 'assignment',
+                        'identifier': ('texto', 'Identificador', 18),
+                        'expression': {
+                            'type': 'factor',
+                            'value': ('"30"', 'Cadena', 18)
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+[{
+        'type': 'assignment',
+        'data_type': ('int', 'Palabra reservada int', 1),
+        'identifier': ('x', 'Identificador', 1),
+        'expression': {
+            'type': 'binary_operation',
+            'operator': ('+', 'Operador suma', 1),
+            'left': {
+                'type': 'binary_operation',
+                'operator': ('+', 'Operador suma', 1),
+                'left': {
+                    'type': 'factor',
+                    'value': ('10', 'Entero', 1)
+                },
+                'right': {
+                    'type': 'factor',
+                    'value': ('20', 'Entero', 1)
+                }
+            },
+            'right': {
+                'type': 'group',
+                'expression': {
+                    'type': 'binary_operation',
+                    'operator': ('/', 'Operador división', 1),
+                    'left': {
+                        'type': 'factor',
+                        'value': ('10', 'Entero', 1)
+                    },
+                    'right': {
+                        'type': 'factor',
+                        'value': ('5', 'Entero', 1)
+                    }
+                }
+            }
+        }
+    }
+]
