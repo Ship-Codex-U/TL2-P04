@@ -71,10 +71,10 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_4 = QWidget()
         self.tab_4.setObjectName(u"tab_4")
-        self.output_assembler = QPlainTextEdit(self.tab_4)
-        self.output_assembler.setObjectName(u"output_assembler")
-        self.output_assembler.setGeometry(QRect(0, 0, 421, 361))
-        self.output_assembler.setCursorWidth(1)
+        self.output_assembly_code = QPlainTextEdit(self.tab_4)
+        self.output_assembly_code.setObjectName(u"output_assembly_code")
+        self.output_assembly_code.setGeometry(QRect(0, 0, 421, 361))
+        self.output_assembly_code.setCursorWidth(1)
         self.tabWidget.addTab(self.tab_4, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

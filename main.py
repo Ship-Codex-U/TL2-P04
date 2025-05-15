@@ -73,6 +73,13 @@ class MainWindow(QMainWindow):
             self.ui.output_semantic_analyzer.setPlainText("OK")
             self.showOutputMessage("Semantic analysis completed with no errors", QColor("green"))
 
+        # Generacion de codigo ensamblador
+        
+        assembly_code = self.compiler.generateAssembly()
+        self.ui.output_assembly_code.clear()
+        self.ui.output_assembly_code.setReadOnly(True)
+        self.ui.output_assembly_code.setPlainText(assembly_code)
+
     def showOutputMessage(self, text, color):
         cursor = self.ui.output_messages.textCursor()
         cursor.movePosition(QTextCursor.End)

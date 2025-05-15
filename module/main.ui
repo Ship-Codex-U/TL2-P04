@@ -95,7 +95,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -152,7 +152,7 @@
      <attribute name="title">
       <string>ENSAM</string>
      </attribute>
-     <widget class="QPlainTextEdit" name="output_assembler">
+     <widget class="QPlainTextEdit" name="output_assembly_code">
       <property name="geometry">
        <rect>
         <x>0</x>
