@@ -8,14 +8,15 @@ class Compiler:
         self.__tokensFound = []
         self.__tree = None
 
-        self.__found_errors = False
+        self.__found_errors_lexical = False
+        self.__found_errors_parser = False
+        self.__found_errors_semantic = False
 
     def lexicalAnalyser(self, code : str) -> tuple[list, list]:
         lexicalAnalizer = LexicalAnalizer()
         [self.__tokensFound, errors] = lexicalAnalizer.analyze(code)
 
-        if errors:
-            self.__found_errors = True 
+        self.__found_errors_lexical = True if errors else False
 
         return (self.__tokensFound, errors)
     
@@ -23,8 +24,7 @@ class Compiler:
         parser = Parser(self.__tokensFound)
         [self.__tree, errors] = parser.parse()
 
-        if errors:
-            self.__found_errors = True
+        self.__found_errors_parser = True if errors else False
 
         return (self.__tree, errors[0] if errors else None)
     
@@ -32,13 +32,12 @@ class Compiler:
         semanticAnalyzer = SemanticAnalyzer(self.__tree)
         errors = semanticAnalyzer.analyze()
 
-        if errors:
-            self.__found_errors = True
+        self.__found_errors_semantic = True if errors else False
 
         return errors if errors else None
     
     def generateAssembly(self):
-        if self.__found_errors:
+        if self.__found_errors_lexical or self.__found_errors_parser or self.__found_errors_semantic:
             return "No es posible generar el código de ensamblador debido a errores en el codigo."
 
         generator = GenerateAssembly()

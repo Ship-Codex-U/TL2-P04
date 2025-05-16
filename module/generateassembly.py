@@ -1,10 +1,10 @@
 class GenerateAssembly:
     def __init__(self):
-        self.assembly_code = []  # Lista para almacenar las instrucciones de ensamblador
-        self.data_section = []  # Sección .data para variables
-        self.temp_counter = 0    # Contador para registros temporales (enteros)
-        self.temp_float_counter = 0 # Contador para registros temporales (float)
-        self.label_counter = 0   # Contador para etiquetas
+        self.assembly_code = []
+        self.data_section = []
+        self.temp_counter = 0
+        self.temp_float_counter = 0 
+        self.label_counter = 0 
 
     def generateAssembly(self, tree) -> str:
         # Genera el código ensamblador MIPS a partir del árbol de análisis sintáctico/semántico.
